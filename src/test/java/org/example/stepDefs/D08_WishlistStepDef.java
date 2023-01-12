@@ -27,7 +27,7 @@ public class D08_WishlistStepDef {
 
     @When("user click on xbutton")
     public void buttonWishList() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(4000);
         home.xbutton().click();
     }
 
