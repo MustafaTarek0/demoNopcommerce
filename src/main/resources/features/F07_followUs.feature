@@ -27,4 +27,4 @@ Scenario Outline: user opens youtube link
   Then New Tab "<Link>" should be opened
  Examples:
   |Link|
-  |https://consent.youtube.com/m?continue=https%3A%2F%2Fwww.youtube.com%2Fuser%2FnopCommerce%3Fcbrd%3D1&gl=FR&m=0&pc=yt&hl=en&src=1|
+  |https://www.youtube.com/user/nopCommerce|

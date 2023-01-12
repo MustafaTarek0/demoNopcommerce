@@ -49,8 +49,9 @@ public class D07_followUsStepDef {
 
 
     @When("user opens rss link")
-    public void RessIconPage()
+    public void RssIconPage()
     {
+
         Hooks.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         home.Rssicon().click();
         WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(7));
