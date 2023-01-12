@@ -41,11 +41,11 @@ public class D08_WishlistStepDef {
     @Then("user can check Qty of his product")
     public void QtyValueList ()
     {
-        String temp = home.QtyValue().getAttribute("value");
+        String qty = home.QtyValue().getAttribute("value");
 
-          int i = Integer.parseInt(temp);
-          System.out.println(temp);
-          Assert.assertTrue(i > 0);
+          int Q = Integer.parseInt(qty);
+          System.out.println(qty);
+          Assert.assertTrue(Q > 0);
 
 
 
