@@ -3,26 +3,19 @@ package org.example.stepDefs;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import org.example.Pages.P01_Register;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.Color;
-import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
+import org.example.Pages.pageBase;
 import org.testng.asserts.SoftAssert;
 
-public class D01_registerStepDef {
+import java.util.Random;
 
-    public static void Selecting(WebElement dropbox,String value)
-    {
-        Select select = new Select(dropbox);
-        select.selectByVisibleText(value);
+public class D01_registerStepDef extends pageBase {
 
 
-    }
 
     P01_Register register = new P01_Register();
+    Random ran = new Random();
+    int randomNumber = ran.nextInt(100);
 
     @Given("user go to register page")
     public void registerPage()
@@ -35,27 +28,33 @@ public class D01_registerStepDef {
 
 
 
-    @And("user select gender type")
-    public void setGenderButton()
+    @And("user select gender type{string}")
+    public void setGenderButton(String gender)
     {
-        register.genderButton().click();
+        if (gender.equals("male")){
+            register.maleGenderRadioButton().click();
+        }
+        else if (gender.equals("female")){
+            register.femaleGenderRadioButton().click();
+        }
 
     }
 
 
-    @And("user enter first name")
-            public void FirstName()
+
+    @And("user enter first name{string}")
+            public void FirstName(String firstName)
     {
 
-        register.FirstName().sendKeys("automation");
+        register.FirstName().sendKeys(firstName+randomNumber);
 
     }
 
-    @And("user enter last name")
+    @And("user enter last name{string}")
 
-    public void LastName()
+    public void LastName(String lastName)
     {
-        register.LastName().sendKeys("tester");
+        register.LastName().sendKeys(lastName+randomNumber);
 
     }
 
@@ -65,35 +64,32 @@ public class D01_registerStepDef {
             public void DateOfBirth()
     {
 
-        Selecting(register.DateOfBirthDay(),"17" );
-        Selecting(register.DateOfBirthMonth(),"May" );
-        Selecting(register.DateOfBirthYear(), "1987");
+        Selecting(register.DateOfBirthDay(),"12" );
+        Selecting(register.DateOfBirthMonth(),"9" );
+        Selecting(register.DateOfBirthYear(), "1997");
 
     }
 
 
 
-    @And("user enter email \"test@example.com\" field")
-
-    public void Email()
+    @And("user enter his email {string}")
+    public void Email(String email)
     {
-        register.Email().sendKeys("test@example.com");
+        register.Email().sendKeys(randomNumber+email);
 
     }
 
-    @And("user fills Password")
-
-    public void Password()
+    @And("user enter his Password {string}")
+    public void Password(String Password)
     {
-
-        register.Password().sendKeys("P@ssw0rd");
+        register.Password().sendKeys(Password);
 
     }
 
-    @And("user fills confirm password")
-    public void ConfirmPassword()
+    @And("user confirms his password {string}")
+    public void ConfirmPassword(String Password)
     {
-        register.ConfirmPassword().sendKeys("P@ssw0rd");
+        register.ConfirmPassword().sendKeys(Password);
 
     }
 
@@ -104,26 +100,23 @@ public class D01_registerStepDef {
 
     }
 
-    @Then("success message is displayed")
+    @Then("success message is displayed {string}")
 
-    public void ConfirmMsgTemplate()
+    public void ConfirmMsgTemplate(String msg)
     {
         SoftAssert soft = new SoftAssert();
         soft.assertTrue(register.ConfirmationMsg().isDisplayed());
-        soft.assertEquals(register.ConfirmationMsg().getText(),"Your registration completed");
-        String Green = register.ConfirmationMsg().getCssValue("color");
-        System.out.println(Green);
-        soft.assertEquals(Green,"rgba(76, 177, 124, 1)");
-
+        soft.assertEquals(register.ConfirmationMsg().getText(),msg);
         soft.assertAll();
-
-
-
-
-
-
     }
 
 
+    @And("color of success message should be green")
+    public void colorOfSuccessMessageShouldBeGreen() {
+        SoftAssert soft = new SoftAssert();
+        String color = register.ConfirmationMsg().getCssValue("color");
+        soft.assertEquals(color,"rgba(76, 177, 124, 1)");
+        soft.assertAll();
 
+    }
 }

@@ -1,61 +1,96 @@
 package org.example.Pages;
 
-import io.cucumber.messages.types.Hook;
-import org.example.stepDefs.Hooks;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 
-public class P01_Register {
+public class P01_Register extends pageBase {
 
-   public  P01_Register()
-   {
-       PageFactory.initElements(Hooks.driver, this);
 
-   }
 
    @FindBy(className = "ico-register")
     public WebElement registerLink;
 
+   @FindBy(css = "#gender-male")
+   WebElement maleButton;
 
-   public WebElement genderButton()
+   @FindBy(css = "#gender-female")
+   WebElement femaleButton;
+
+   @FindBy(css = "#FirstName")
+   WebElement firstName;
+
+    @FindBy(css = "#LastName")
+    WebElement lastName;
+
+    @FindBy(name = "DateOfBirthDay")
+    WebElement birthDay;
+
+    @FindBy(name = "DateOfBirthMonth")
+    WebElement birthMonth;
+
+    @FindBy(name = "DateOfBirthYear")
+    WebElement birthYear;
+
+    @FindBy(css = "#Email")
+    WebElement email;
+
+    @FindBy(css = "#Password")
+    WebElement password;
+    @FindBy(css = "#ConfirmPassword")
+    WebElement confirmPassword;
+
+
+    @FindBy(css = "#register-button")
+    WebElement registerButton;
+
+    @FindBy(className = "result")
+    WebElement message;
+
+    public WebElement maleGenderRadioButton()
    {
 
 
-       return Hooks.driver.findElement(By.cssSelector("#gender-male"));
+       return maleButton;
 
 
    }
+    public WebElement femaleGenderRadioButton()
+    {
+
+
+        return femaleButton;
+
+
+    }
 
    public WebElement FirstName()
    {
 
-       return Hooks.driver.findElement(By.cssSelector("#FirstName"));
+       return firstName;
    }
 
    public WebElement LastName()
    {
 
-       return Hooks.driver.findElement(By.cssSelector("#LastName"));
+       return lastName;
 
    }
    public WebElement DateOfBirthDay()
    {
-       return Hooks.driver.findElement(By.name("DateOfBirthDay"));
+       return birthDay;
 
 
    }
     public WebElement DateOfBirthMonth()
     {
-        return Hooks.driver.findElement(By.name("DateOfBirthMonth"));
+        return birthMonth;
 
 
     }
     public WebElement DateOfBirthYear()
     {
-        return Hooks.driver.findElement(By.name("DateOfBirthYear"));
+        return birthYear;
 
 
     }
@@ -64,33 +99,33 @@ public class P01_Register {
    public WebElement Email()
    {
 
-       return Hooks.driver.findElement(By.cssSelector("#Email"));
+       return email;
 
    }
 
    public WebElement Password()
    {
 
-       return Hooks.driver.findElement(By.cssSelector("#Password"));
+       return password;
 
    }
 
    public WebElement ConfirmPassword()
    {
 
-       return Hooks.driver.findElement(By.cssSelector("#ConfirmPassword"));
+       return confirmPassword;
    }
 
    public WebElement RegisterButton()
    {
-       return Hooks.driver.findElement(By.cssSelector("#register-button"));
+       return registerButton;
 
    }
 
    public WebElement ConfirmationMsg()
    {
 
-       return Hooks.driver.findElement(By.className("result"));
+       return message;
 
    }
 

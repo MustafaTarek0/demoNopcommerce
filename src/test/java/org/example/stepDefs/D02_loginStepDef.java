@@ -4,21 +4,18 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.example.Pages.P01_Register;
 import org.example.Pages.P02_Login;
-import org.testng.annotations.Test;
+import org.example.Pages.pageBase;
 import org.testng.asserts.SoftAssert;
 
-public class D02_loginStepDef {
+public class D02_loginStepDef extends pageBase{
 
     P02_Login Login = new P02_Login();
 
     @Given("user go to login page")
-    public void loginPage()
-
-    {
-        System.out.println("aaaaaaaaaa");
-        Login.LoginLink.click();
+    public void loginPage() throws InterruptedException {
+        Thread.sleep(2000);
+        Login.loginLink().click();
     }
 
 
@@ -41,7 +38,7 @@ public class D02_loginStepDef {
     @And("user press on login button")
     public void LoginButtonuser()
     {
-        Login.ButtonOfLogin().click();
+        Login.loginButton().click();
     }
 
 
@@ -50,7 +47,7 @@ public class D02_loginStepDef {
     public void AccountSuccessfullyLogin()
     {
         SoftAssert soft = new SoftAssert();
-        soft.assertTrue(Login.UserAccount().isDisplayed());
+        soft.assertTrue(Login.myAccount().isDisplayed());
         soft.assertEquals(Hooks.driver.getCurrentUrl(), "https://demo.nopcommerce.com/");
 
         soft.assertAll();
@@ -77,11 +74,11 @@ public class D02_loginStepDef {
     public void AccountUnSuccessfullyLogin()
     {
         SoftAssert soft = new SoftAssert();
-        soft.assertTrue(Login.UnsuccessfullyMsg().isDisplayed());
-        soft.assertEquals(Login.UnsuccessfullyMsg().getText(),"Login was unsuccessful. Please correct the errors and try again.\n" +
+        soft.assertTrue(Login.UnsuccessfulMsg().isDisplayed());
+        soft.assertEquals(Login.UnsuccessfulMsg().getText(),"Login was unsuccessful. Please correct the errors and try again.\n" +
                 "No customer account found");
         System.out.println("Login was unsuccessful");
-        String red = Login.UnsuccessfullyMsg().getCssValue("color");
+        String red = Login.UnsuccessfulMsg().getCssValue("color");
         System.out.println(red);
         soft.assertEquals(red,"rgba(228, 67, 75, 1)");
 

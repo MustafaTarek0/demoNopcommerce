@@ -15,46 +15,32 @@ import java.util.List;
 public class D03_currenciesStepDef {
 
    P03_homepage Currencies = new P03_homepage();
-   @When("user Click to droplist currency changer")
-   public void userClickToDroplistCurrencyChanger()
+   @When("user Click on currencies dropdown list")
+   public void userClickToDropListCurrencyChanger()
    {
       Currencies.Currency().click();
 
    }
 
    @And("Click on Euro currency")
-   public void eurocurrncy()
+   public void euro()
    {
-      Currencies.EuroCurrency().click();
+      Currencies.Euro().click();
 
    }
 
 
-   @Then("Currencies should be changed to Euro")
-   public void eurocurrencyshowen()
-   {
-
-     Assert.assertTrue(Currencies.CurrnciesShowen().isDisplayed());
 
 
-   }
-
-
-   @And("Elements should be shown")
+   @And("Currencies should be changed to Euro")
    public void ShowProductElements()
    {
-
-
-      List<WebElement> temp = Currencies.ProductElement();
-      for (WebElement element : temp)
+      List<WebElement> currency = Currencies.ProductElement();
+      for (WebElement element : currency)
       {
-         System.out.println("null:" + element.getText());
-         String PriceShown = element.getText();
-         Assert.assertEquals(PriceShown.contains("€"), true);
-
-
-
-
+         System.out.println("price:" + element.getText());
+         String Price = element.getText();
+         Assert.assertTrue(Price.contains("€"));
       }
 
 

@@ -4,6 +4,7 @@
     Scenario: user can add items into wishlist
       When user click on Wish button
       Then user should successfully added item
+      And message color should be green
 
 
 

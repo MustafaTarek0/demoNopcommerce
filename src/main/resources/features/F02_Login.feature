@@ -10,7 +10,7 @@ Feature: F02_Login | users could use login functionality to use their accounts
 
     Examples:
       | Email            | password |
-      | test@example.com | P@ssw0rd |
+      |mustafatarek0097@gmail.com |123456789 |
 
 
   Scenario Outline: user could login with invalid email and password
@@ -22,5 +22,5 @@ Feature: F02_Login | users could use login functionality to use their accounts
 
     Examples:
       |Email|password|
-      |wrong@example.com|P@ssw0rd|
+      |111111@gmail.com|111111|
 

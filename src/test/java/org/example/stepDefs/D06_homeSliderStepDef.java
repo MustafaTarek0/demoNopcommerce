@@ -12,19 +12,19 @@ public class D06_homeSliderStepDef {
 
     P03_homepage home = new P03_homepage();
     @When("user click on Nokia Lumia Slider")
-    public void NukiaLumia1020()
+    public void NokiaLumia1020()
     {
-        Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        home.FirstTab().click();
+
+        home.firstSlide().click();
 
 
 
     }
 
     @Then("user navigate to Nokia page")
-    public void NukiaPageurl()
+    public void navigateToNokiaPageUrl()
     {
-        Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+
         Assert.assertEquals(Hooks.driver.getCurrentUrl(), "https://demo.nopcommerce.com/nokia-lumia-1020");
 
 
@@ -32,17 +32,16 @@ public class D06_homeSliderStepDef {
 
 
     @When("user click on I-Phone Slider")
-    public void IPhoneSlider()
+    public void iPhoneSlider()
     {
-        Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        home.SecondTab().click();
+
+        home.secondSlide().click();
 
 
     }
     @Then("user navigate to I-Phone page")
-    public void Iphoneurl()
+    public void navigateToIphoneUrl()
     {
-        Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         Assert.assertEquals(Hooks.driver.getCurrentUrl(),"https://demo.nopcommerce.com/iphone-6");
 
 

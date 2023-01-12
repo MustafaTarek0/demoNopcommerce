@@ -31,13 +31,13 @@ public class D05_hoverCategoriesStepDef {
     public void ResultPageTitle()
     {
 
-        String Page = hover.PageTitle().getText().toLowerCase().trim();
-         Assert.assertEquals(Page,"desktops");
+        String category = hover.PageTitle().getText().toLowerCase().trim();
+         Assert.assertEquals(category, "desktops");
 
     }
 
 
 
-    }
+}
 
 

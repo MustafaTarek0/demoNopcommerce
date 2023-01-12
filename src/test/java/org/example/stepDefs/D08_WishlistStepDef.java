@@ -23,38 +23,40 @@ public class D08_WishlistStepDef {
         SoftAssert soft = new SoftAssert();
         soft.assertTrue(home.SuccessMsgGreen().isDisplayed());
         soft.assertEquals(home.SuccessMsgGreen().getText(),"The product has been added to your wishlist");
-        System.out.println("The product has been added to your wishlist");
-        String Green = home.SuccessMsgGreen().getCssValue("background-color");
-        System.out.println(Green);
-        soft.assertEquals(Green,"rgba(75, 176, 122, 1)");
-        soft.assertAll();
     }
 
     @When("user click on xbutton")
-    public void xbuttonWishList()
+    public void buttonWishList()
     {
         home.xbutton().click();
     }
 
 
     @And("user click on wishlist button")
-    public void WishElement ()
+    public void WishlistElement ()
     {
         home.WishListElement().click();
     }
 
     @Then("user can check Qty of his product")
-    public void Qtyvaluelist ()
+    public void QtyValueList ()
     {
         String temp = home.QtyValue().getAttribute("value");
 
           int i = Integer.parseInt(temp);
           System.out.println(temp);
           Assert.assertTrue(i > 0);
-          Assert.assertFalse(i <= 0);
+
 
 
     }
 
 
+    @And("message color should be green")
+    public void messageColorShouldBeGreen() {
+        SoftAssert soft = new SoftAssert();
+        String Green = home.SuccessMsgGreen().getCssValue("background-color");
+        soft.assertEquals(Green,"rgba(75, 176, 122, 1)");
+        soft.assertAll();
+    }
 }

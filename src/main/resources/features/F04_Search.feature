@@ -3,12 +3,12 @@ Feature:
   Scenario Outline: 1 user could search using product name
      When user enter product name on search bar "<product>"
      And click on search button
-     Then proudct"<product>" should be shown
+     Then product"<product>" should be visible
 
 
     Examples:
       |product|
-      |book|
+      |Book|
       |laptop|
       |nike|
 
@@ -17,7 +17,7 @@ Feature:
     When  user enter product name on search bar "<sku>"
     And   click on search button
     And   user click on product
-    Then sku"<sku>" should be shown
+    Then sku"<sku>" should be visible
 
 
 
