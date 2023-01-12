@@ -18,16 +18,16 @@ public class D08_WishlistStepDef {
     }
 
     @Then("user should successfully added item")
-    public void  WishListSuccessMsg()
-    {
+    public void  WishListSuccessMsg() throws InterruptedException {
         SoftAssert soft = new SoftAssert();
+        Thread.sleep(3000);
         soft.assertTrue(home.SuccessMsgGreen().isDisplayed());
         soft.assertEquals(home.SuccessMsgGreen().getText(),"The product has been added to your wishlist");
     }
 
     @When("user click on xbutton")
-    public void buttonWishList()
-    {
+    public void buttonWishList() throws InterruptedException {
+        Thread.sleep(5000);
         home.xbutton().click();
     }
 

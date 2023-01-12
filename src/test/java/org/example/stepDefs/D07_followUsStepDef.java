@@ -28,16 +28,11 @@ public class D07_followUsStepDef {
     {
 
 
-        //2- get window list inside array
         ArrayList<String> tabs = new ArrayList<>(Hooks.driver.getWindowHandles());
         System.out.println(tabs.size());
-
-        //3- switch from tab 0 to tab 1
         Hooks.driver.switchTo().window(tabs.get(1));
         System.out.println("tab 1:  " +Hooks.driver.getCurrentUrl());
-
         Assert.assertEquals(Hooks.driver.getCurrentUrl(),(link));
-
         Hooks.driver.close();
 
     }
@@ -46,7 +41,6 @@ public class D07_followUsStepDef {
     @When("user opens twitter link")
     public void TwitterPageIcon()
     {
-        Hooks.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
         home.Twittericon().click();
         WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(7));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));

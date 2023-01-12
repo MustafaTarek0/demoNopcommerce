@@ -122,7 +122,7 @@ public class P03_homepage {
     }
     public WebElement xbutton()
     {
-        return Hooks.driver.findElement(By.cssSelector("#bar-notification > div > span"));
+        return Hooks.driver.findElement(By.xpath("//*[@id=\"bar-notification\"]/div/span"));
     }
     public WebElement WishListElement()
     {
