@@ -1,11 +1,9 @@
 package org.example.Pages;
 
-import io.cucumber.messages.types.Hook;
 import org.example.stepDefs.Hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
@@ -154,7 +152,7 @@ WebElement currency;
           return facebook;
       }
 
-    public WebElement Rssicon()
+    public WebElement Rss()
     {
         return rss;
 

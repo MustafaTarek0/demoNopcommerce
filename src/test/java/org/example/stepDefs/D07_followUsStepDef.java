@@ -52,9 +52,9 @@ public class D07_followUsStepDef extends pageBase {
     public void RssIconPage()
     {
 
-        Hooks.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        home.Rssicon().click();
-        WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(7));
+        Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        home.Rss().click();
+        WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 
     }
@@ -63,9 +63,9 @@ public class D07_followUsStepDef extends pageBase {
     @When("user opens youtube link")
     public void YoutubeIconPage ()
     {
-        Hooks.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
         home.youtubeIcon().click();
-        WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(7));
+        WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 
 
