@@ -6,35 +6,53 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
-public class P02_Login {
+public class P02_Login extends pageBase {
 
+
+    @FindBy(className = "ico-login")
+    WebElement loginIcon;
+
+    @FindBy(css = "#Email")
+    WebElement email;
+
+    @FindBy(css = "#Password")
+    WebElement password;
+
+    @FindBy(css = "body > div.master-wrapper-page > div.master-wrapper-content > div > div > div > div.page-body > div.customer-blocks > div.returning-wrapper.fieldset > form > div.buttons > button")
+    WebElement loginBtn;
+
+    @FindBy(xpath = "/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a")
+    WebElement myAcc;
+
+    @FindBy(css = "/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a")
+    WebElement unSuccessfulMsg;
 
     public WebElement loginLink () {
-        return Hooks.driver.findElement(By.className("ico-login"));
+        return loginIcon;
     }
 
     public WebElement email()
     {
-        return Hooks.driver.findElement(By.cssSelector("#Email"));
+        return email;
 
     }
 
     public WebElement Password()
     {
-        return Hooks.driver.findElement(By.cssSelector("#Password"));
+        return password;
     }
     public WebElement loginButton()
     {
-        return Hooks.driver.findElement(By.cssSelector("body > div.master-wrapper-page > div.master-wrapper-content > div > div > div > div.page-body > div.customer-blocks > div.returning-wrapper.fieldset > form > div.buttons > button"));
+        return loginBtn;
     }
 
     public WebElement myAccount()
     {
-      return Hooks.driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a"));
+      return myAcc;
     }
 
     public WebElement UnsuccessfulMsg()
     {
-        return Hooks.driver.findElement(By.cssSelector("/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a"));
+        return unSuccessfulMsg;
     }
 }
