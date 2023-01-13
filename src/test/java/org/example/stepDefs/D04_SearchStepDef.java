@@ -7,9 +7,9 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
 import java.util.List;
+import org.example.Pages.pageBase;
 
-
-public class D04_SearchStepDef {
+public class D04_SearchStepDef extends pageBase {
 
         P03_homepage home = new P03_homepage();
         @When("user enter product name on search bar {string}")
@@ -55,7 +55,7 @@ public class D04_SearchStepDef {
                       public void skuShouldBeShown(String Sku)
                       {
 
-                              Assert.assertEquals(home.SearchProudctsku().getText().contains(Sku),true);
+                              Assert.assertEquals(home.productSku().getText().contains(Sku),true);
 
                       }
 }

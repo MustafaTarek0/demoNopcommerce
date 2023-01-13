@@ -5,10 +5,10 @@ import io.cucumber.java.en.When;
 import org.example.Pages.P03_homepage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-
+import org.example.Pages.pageBase;
 import java.util.concurrent.TimeUnit;
 
-public class D06_homeSliderStepDef {
+public class D06_homeSliderStepDef extends pageBase {
 
     P03_homepage home = new P03_homepage();
     @When("user click on Nokia Lumia Slider")

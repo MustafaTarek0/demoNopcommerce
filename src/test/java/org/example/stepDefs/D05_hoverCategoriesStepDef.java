@@ -7,8 +7,8 @@ import io.cucumber.java.en.When;
 import org.example.Pages.P03_homepage;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
-
-public class D05_hoverCategoriesStepDef {
+import org.example.Pages.pageBase;
+public class D05_hoverCategoriesStepDef  extends pageBase {
 
     P03_homepage hover = new P03_homepage();
     @When("user hover on Computers category")

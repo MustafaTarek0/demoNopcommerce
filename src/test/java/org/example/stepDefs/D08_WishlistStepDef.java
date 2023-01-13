@@ -7,8 +7,8 @@ import org.example.Pages.P03_homepage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.asserts.SoftAssert;
-
-public class D08_WishlistStepDef {
+import org.example.Pages.pageBase;
+public class D08_WishlistStepDef extends pageBase {
 
     P03_homepage home = new P03_homepage();
     @When("user click on Wish button")

@@ -6,19 +6,19 @@ import org.example.Pages.P03_homepage;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
+import org.example.Pages.pageBase;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class D07_followUsStepDef {
+public class D07_followUsStepDef extends pageBase {
 
     P03_homepage home = new P03_homepage();
     @When("user opens facebook link")
     public void FacebookIcon()
     {
         Hooks.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        home.Facebookicon().click();
+        home.Facebook().click();
         WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(7));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
     }
@@ -64,7 +64,7 @@ public class D07_followUsStepDef {
     public void YoutubeIconPage ()
     {
         Hooks.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        home.TubeIcon().click();
+        home.youtubeIcon().click();
         WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(7));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 

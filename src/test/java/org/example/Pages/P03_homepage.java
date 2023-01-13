@@ -9,19 +9,78 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class P03_homepage {
+public class P03_homepage extends pageBase{
 
+@FindBy(css = "#customerCurrency")
+WebElement currency;
 
-  public WebElement Currency()
+    @FindBy(css = "#customerCurrency > option:nth-child(2)")
+    WebElement Euro;
+
+    @FindBy(id = "small-searchterms")
+    WebElement searchBar;
+
+    @FindBy(xpath = "/html/body/div[6]/div[1]/div[2]/div[2]/form/button")
+    WebElement searchBtn;
+
+    @FindBy(linkText = "Computers")
+    WebElement HoverComputers;
+
+    @FindBy(linkText = "Desktops")
+    WebElement subCategoryDesktops;
+
+    @FindBy(linkText = ".page-title")
+    WebElement PageTitle;
+
+    @FindBy(xpath = "//*[@id=\"nivo-slider\"]/a[1]")
+    WebElement firstSlide;
+
+    @FindBy(xpath = "//*[@id=\"nivo-slider\"]/a[2]")
+    WebElement secondSlide;
+
+    @FindBy(xpath = "/html/body/div[6]/div[3]/div/div[2]/div/div[2]/div[3]/div/div[2]/div/div/div/div/div[1]/a/img")
+    WebElement product;
+
+    @FindBy(css = ".sku")
+    WebElement sku;
+
+    @FindBy(css ="a[href=\"http://www.facebook.com/nopCommerce\"]" )
+    WebElement facebook;
+
+    @FindBy(css ="a[href=\"/news/rss/1\"]" )
+    WebElement rss;
+
+    @FindBy(css ="a[href=\"http://www.youtube.com/user/nopCommerce\"]" )
+    WebElement youtube;
+
+    @FindBy(xpath ="/html/body/div[6]/div[3]/div/div/div/div/div[4]/div[2]/div[3]/div/div[2]/div[3]/div[2]/button[3]" )
+    WebElement WishlistButton;
+
+    @FindBy(xpath ="/html/body/div[5]/div" )
+    WebElement successMsg;
+
+    @FindBy(css = "#bar-notification > div > span")
+    WebElement xbutton;
+
+    @FindBy(css = "a[href=\"/wishlist\"]")
+    WebElement WishListElement;
+
+    @FindBy(css = "a[href=\"https://twitter.com/nopCommerce\"]")
+    WebElement twitter;
+
+    @FindBy(css = ".qty-input")
+    WebElement qty;
+    public WebElement Currency()
   {
 
-      return Hooks.driver.findElement(By.cssSelector("#customerCurrency"));
+      return currency;
   }
 
   public WebElement Euro()
   {
-      return Hooks.driver.findElement(By.cssSelector("#customerCurrency > option:nth-child(2)"));
+      return Euro;
   }
+
 
       public List<WebElement> ProductElement()
       {
@@ -32,33 +91,33 @@ public class P03_homepage {
 
       public WebElement SearchBar()
       {
-          return Hooks.driver.findElement(By.id("small-searchterms"));
+          return searchBar;
       }
 
       public WebElement SearchButton()
       {
 
-          return Hooks.driver.findElement(By.xpath("/html/body/div[6]/div[1]/div[2]/div[2]/form/button"));
+          return searchBtn;
       }
     public WebElement Hovering()
     {
-        return Hooks.driver.findElement(By.linkText("Computers"));
+        return HoverComputers;
 
     }
     public WebElement SubCategory()
     {
 
-        return Hooks.driver.findElement(By.linkText("Desktops"));
+        return subCategoryDesktops;
     }
     public WebElement PageTitle()
     {
-        return Hooks.driver.findElement(By.cssSelector(".page-title"));
+        return PageTitle;
     }
 
     public WebElement firstSlide ()
     {
 
-        return Hooks.driver.findElement(By.xpath("//*[@id=\"nivo-slider\"]/a[2]"));
+        return firstSlide;
 
     }
 
@@ -71,69 +130,69 @@ public class P03_homepage {
       public WebElement ClickOnProduct()
       {
 
-          return Hooks.driver.findElement(By.xpath("/html/body/div[6]/div[3]/div/div[2]/div/div[2]/div[3]/div/div[2]/div/div/div/div/div[1]/a/img"));
+          return product;
       }
 
 
 
 
-      public WebElement SearchProudctsku()
+      public WebElement productSku()
       {
 
-          return Hooks.driver.findElement(By.cssSelector(".sku"));
+          return sku;
       }
 
 
       public WebElement secondSlide()
       {
-          return Hooks.driver.findElement(By.xpath("//*[@id=\"nivo-slider\"]/a[2]"));
+          return secondSlide;
       }
 
-      public WebElement Facebookicon()
+      public WebElement Facebook()
       {
 
-          return Hooks.driver.findElement(By.cssSelector("a[href=\"http://www.facebook.com/nopCommerce\"]"));
+          return facebook;
       }
 
     public WebElement Rssicon()
     {
-        return Hooks.driver.findElement(By.cssSelector("a[href=\"/news/rss/1\"]"));
+        return rss;
 
     }
 
-    public WebElement TubeIcon()
+    public WebElement youtubeIcon()
     {
-        return Hooks.driver.findElement(By.cssSelector("a[href=\"http://www.youtube.com/user/nopCommerce\"]"));
+        return youtube;
     }
 
     public WebElement WishlistButton()
     {
-        return Hooks.driver.findElement(By.xpath("/html/body/div[6]/div[3]/div/div/div/div/div[4]/div[2]/div[3]/div/div[2]/div[3]/div[2]/button[3]"));
+        return WishlistButton;
     }
 
     public WebElement SuccessMsgGreen()
     {
-        return Hooks.driver.findElement(By.xpath("/html/body/div[5]/div"));
+        return successMsg;
     }
     public WebElement xbutton()
     {
-        return Hooks.driver.findElement(By.cssSelector("#bar-notification > div > span"));
+        return xbutton;
     }
     public WebElement WishListElement()
     {
-        return Hooks.driver.findElement(By.cssSelector("a[href=\"/wishlist\"]"));
+        return WishListElement;
     }
 
     public WebElement QtyValue ()
     {
-        return Hooks.driver.findElement(By.cssSelector(".qty-input"));
+        return qty;
     }
 
 
 
       public WebElement Twittericon()
       {
-          return Hooks.driver.findElement(By.cssSelector("a[href=\"https://twitter.com/nopCommerce\"]"));
+          return twitter;
       }
 
 

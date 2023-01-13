@@ -24,7 +24,7 @@ public class P02_Login extends pageBase {
     @FindBy(xpath = "/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a")
     WebElement myAcc;
 
-    @FindBy(css = "/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a")
+    @FindBy(xpath = "/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a")
     WebElement unSuccessfulMsg;
 
     public WebElement loginLink () {

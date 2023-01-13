@@ -7,12 +7,13 @@ import io.cucumber.java.en.When;
 import org.example.Pages.P03_homepage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.example.Pages.pageBase;
 import org.testng.Assert;
 
 import java.sql.SQLOutput;
 import java.util.List;
 
-public class D03_currenciesStepDef {
+public class D03_currenciesStepDef extends pageBase {
 
    P03_homepage Currencies = new P03_homepage();
    @When("user Click on currencies dropdown list")
