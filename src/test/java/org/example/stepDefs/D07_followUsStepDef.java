@@ -18,7 +18,7 @@ public class D07_followUsStepDef extends pageBase {
     public void FacebookIcon()
     {
         Hooks.driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        home.Facebook().click();
+        home.getFacebookLink().click();
         WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(7));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
     }
@@ -41,7 +41,7 @@ public class D07_followUsStepDef extends pageBase {
     @When("user opens twitter link")
     public void TwitterPageIcon()
     {
-        home.Twittericon().click();
+        home.getTwitterLink().click();
         WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(7));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 
@@ -53,7 +53,7 @@ public class D07_followUsStepDef extends pageBase {
     {
 
         Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        home.Rss().click();
+        home.getRssLink().click();
         WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 
@@ -64,7 +64,7 @@ public class D07_followUsStepDef extends pageBase {
     public void YoutubeIconPage ()
     {
         Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-        home.youtubeIcon().click();
+        home.getYoutubeUrl().click();
         WebDriverWait wait = new WebDriverWait(Hooks.driver, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 

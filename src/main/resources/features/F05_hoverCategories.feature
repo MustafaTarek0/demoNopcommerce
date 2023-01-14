@@ -4,6 +4,9 @@
 
     Scenario Outline: user can hover on categories from homepage
       When  user hover on Computers category
-      And   user click on sub-category
-      Then  Sub-category page should be shown
+      And   user click on sub-category "<category>"
+      Then  Sub-category title "<title>" page should be visible
       Examples:
+      |category|title|
+      |Desktops|Desktops|
+      |Software|Software|

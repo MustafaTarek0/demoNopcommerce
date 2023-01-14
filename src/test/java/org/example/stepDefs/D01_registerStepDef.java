@@ -32,10 +32,10 @@ public class D01_registerStepDef extends pageBase {
     public void setGenderButton(String gender)
     {
         if (gender.equals("male")){
-            register.maleGenderRadioButton().click();
+            register.getMaleGenderRadioButton().click();
         }
         else if (gender.equals("female")){
-            register.femaleGenderRadioButton().click();
+            register.getFemaleGenderRadioButton().click();
         }
 
     }
@@ -46,7 +46,7 @@ public class D01_registerStepDef extends pageBase {
             public void FirstName(String firstName)
     {
 
-        register.FirstName().sendKeys(firstName+randomNumber);
+        register.getFirstName().sendKeys(firstName+randomNumber);
 
     }
 
@@ -54,7 +54,7 @@ public class D01_registerStepDef extends pageBase {
 
     public void LastName(String lastName)
     {
-        register.LastName().sendKeys(lastName+randomNumber);
+        register.getLastName().sendKeys(lastName+randomNumber);
 
     }
 
@@ -64,9 +64,9 @@ public class D01_registerStepDef extends pageBase {
             public void DateOfBirth()
     {
 
-        Selecting(register.DateOfBirthDay(),"12" );
-        Selecting(register.DateOfBirthMonth(),"9" );
-        Selecting(register.DateOfBirthYear(), "1997");
+        Selecting(register.getDateOfBirthDay(),"12" );
+        Selecting(register.getDateOfBirthMonth(),"9" );
+        Selecting(register.getDateOfBirthYear(), "1997");
 
     }
 
@@ -75,28 +75,28 @@ public class D01_registerStepDef extends pageBase {
     @And("user enter his email {string}")
     public void Email(String email)
     {
-        register.Email().sendKeys(randomNumber+email);
+        register.getEmail().sendKeys(randomNumber+email);
 
     }
 
     @And("user enter his Password {string}")
     public void Password(String Password)
     {
-        register.Password().sendKeys(Password);
+        register.getPassword().sendKeys(Password);
 
     }
 
     @And("user confirms his password {string}")
     public void ConfirmPassword(String Password)
     {
-        register.ConfirmPassword().sendKeys(Password);
+        register.getConfirmPassword().sendKeys(Password);
 
     }
 
     @And("user clicks on register button")
     public void RegisterButton()
     {
-        register.RegisterButton().click();
+        register.getRegisterButton().click();
 
     }
 
@@ -105,8 +105,8 @@ public class D01_registerStepDef extends pageBase {
     public void ConfirmMsgTemplate(String msg)
     {
         SoftAssert soft = new SoftAssert();
-        soft.assertTrue(register.ConfirmationMsg().isDisplayed());
-        soft.assertEquals(register.ConfirmationMsg().getText(),msg);
+        soft.assertTrue(register.getConfirmationMsg().isDisplayed());
+        soft.assertEquals(register.getConfirmationMsg().getText(),msg);
         soft.assertAll();
     }
 
@@ -114,7 +114,7 @@ public class D01_registerStepDef extends pageBase {
     @And("color of success message should be green")
     public void colorOfSuccessMessageShouldBeGreen() {
         SoftAssert soft = new SoftAssert();
-        String color = register.ConfirmationMsg().getCssValue("color");
+        String color = register.getConfirmationMsg().getCssValue("color");
         soft.assertEquals(color,"rgba(76, 177, 124, 1)");
         soft.assertAll();
 

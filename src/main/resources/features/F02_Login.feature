@@ -10,7 +10,7 @@ Feature: F02_Login | users could use login functionality to use their accounts
 
     Examples:
       | Email            | password |
-      |mustafatarek0097@gmail.com |123456789 |
+      |mustafa@gmail.com |123456789 |
 
 
   Scenario Outline: user could login with invalid email and password
@@ -19,6 +19,7 @@ Feature: F02_Login | users could use login functionality to use their accounts
     And user entered an  invalid  password"<password>"
     And  user press on login button
     Then user could not login to the system
+    And  Message should be red
 
     Examples:
       |Email|password|

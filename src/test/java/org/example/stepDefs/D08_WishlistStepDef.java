@@ -13,34 +13,34 @@ public class D08_WishlistStepDef extends pageBase {
     @When("user click on Wish button")
     public void wishButton()
     {
-        home.WishlistButton().click();
+        home.getWishlistButton().click();
     }
 
     @Then("user should successfully added item")
     public void  WishListSuccessMsg() throws InterruptedException {
         SoftAssert soft = new SoftAssert();
         Thread.sleep(3000);
-        soft.assertTrue(home.SuccessMsgGreen().isDisplayed());
-        soft.assertEquals(home.SuccessMsgGreen().getText(),"The product has been added to your wishlist");
+        soft.assertTrue(home.getSuccessMsgGreen().isDisplayed());
+        soft.assertEquals(home.getSuccessMsgGreen().getText(),"The product has been added to your wishlist");
     }
 
     @When("user click on xbutton")
     public void buttonWishList() throws InterruptedException {
         Thread.sleep(4000);
-        home.xbutton().click();
+        home.getXButton().click();
     }
 
 
     @And("user click on wishlist button")
     public void WishlistElement ()
     {
-        home.WishListElement().click();
+        home.getWishListElement().click();
     }
 
     @Then("user can check Qty of his product")
-    public void QtyValueList ()
+    public void QtyList ()
     {
-        String qty = home.QtyValue().getAttribute("value");
+        String qty = home.getQtyValue().getAttribute("value");
 
           int Q = Integer.parseInt(qty);
           System.out.println(qty);
@@ -54,7 +54,7 @@ public class D08_WishlistStepDef extends pageBase {
     @And("message color should be green")
     public void messageColorShouldBeGreen() {
         SoftAssert soft = new SoftAssert();
-        String Green = home.SuccessMsgGreen().getCssValue("background-color");
+        String Green = home.getSuccessMsgGreen().getCssValue("background-color");
         soft.assertEquals(Green,"rgba(75, 176, 122, 1)");
         soft.assertAll();
     }

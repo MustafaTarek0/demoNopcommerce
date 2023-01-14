@@ -16,7 +16,7 @@ public class D04_SearchStepDef extends pageBase {
         public void userEnterProductNameOnSearchBar(String serial)
         {
 
-                home.SearchBar().sendKeys(serial);
+                home.getSearchBar().sendKeys(serial);
 
         }
 
@@ -24,7 +24,7 @@ public class D04_SearchStepDef extends pageBase {
         @And("click on search button")
         public void ClickSearchButton()
         {
-                home.SearchButton().click();
+                home.getSearchButton().click();
         }
 
 
@@ -32,7 +32,7 @@ public class D04_SearchStepDef extends pageBase {
         public void productShouldBeVisible(String Product)
                 {
 
-                        List<WebElement> temp = home.SearchProductElements();
+                        List<WebElement> temp = home.getSearchProductElements();
                         System.out.println("products size :" + temp.size());
                         SoftAssert soft = new SoftAssert();
                         soft.assertTrue(Hooks.driver.getCurrentUrl().contains("https://demo.nopcommerce.com/search?q="));
@@ -48,14 +48,14 @@ public class D04_SearchStepDef extends pageBase {
                         @And("user click on product")
                         public void UserClickOnProduct()
                         {
-                                home.ClickOnProduct().click();
+                                home.getClickOnProduct().click();
                         }
 
                       @Then("sku{string} should be visible")
                       public void skuShouldBeShown(String Sku)
                       {
 
-                              Assert.assertEquals(home.productSku().getText().contains(Sku),true);
+                              Assert.assertEquals(home.getProductSku().getText().contains(Sku),true);
 
                       }
 }

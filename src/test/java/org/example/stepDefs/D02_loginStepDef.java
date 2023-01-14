@@ -15,7 +15,7 @@ public class D02_loginStepDef extends pageBase{
     @Given("user go to login page")
     public void loginPage() throws InterruptedException {
         Thread.sleep(2000);
-        Login.loginLink().click();
+        Login.getloginLink().click();
     }
 
 
@@ -23,7 +23,7 @@ public class D02_loginStepDef extends pageBase{
     public void userEnterAValidEmail(String email)
 
     {
-        Login.email().sendKeys(email);
+        Login.getEmail().sendKeys(email);
     }
 
 
@@ -31,14 +31,14 @@ public class D02_loginStepDef extends pageBase{
     @And("user Enter a valid Password{string}")
     public void userEnterAValidPassword(String Password)
     {
-        Login.Password().sendKeys(Password);
+        Login.getPassword().sendKeys(Password);
     }
 
 
     @And("user press on login button")
     public void LoginButtonuser()
     {
-        Login.loginButton().click();
+        Login.getLoginButton().click();
     }
 
 
@@ -47,7 +47,7 @@ public class D02_loginStepDef extends pageBase{
     public void AccountSuccessfullyLogin()
     {
         SoftAssert soft = new SoftAssert();
-        soft.assertTrue(Login.myAccount().isDisplayed());
+        soft.assertTrue(Login.getMyAccount().isDisplayed());
         soft.assertEquals(Hooks.driver.getCurrentUrl(), "https://demo.nopcommerce.com/");
 
         soft.assertAll();
@@ -56,14 +56,14 @@ public class D02_loginStepDef extends pageBase{
     @When("user entered an invalid Email{string}")
     public void userEnteredAnInvalidEmail(String Email)
     {
-        Login.email().sendKeys(Email);
+        Login.getEmail().sendKeys(Email);
 
     }
 
     @And("user entered an  invalid  password{string}")
     public void userEnteredAnInvalidPassword(String password)
     {
-        Login.Password().sendKeys(password);
+        Login.getPassword().sendKeys(password);
     }
 
 
@@ -74,18 +74,20 @@ public class D02_loginStepDef extends pageBase{
     public void AccountUnSuccessfullyLogin()
     {
         SoftAssert soft = new SoftAssert();
-        soft.assertTrue(Login.UnsuccessfulMsg().isDisplayed());
-        soft.assertEquals(Login.UnsuccessfulMsg().getText(),"Login was unsuccessful. Please correct the errors and try again.\n" +
+        soft.assertTrue(Login.getUnsuccessfulMsg().isDisplayed());
+        soft.assertEquals(Login.getUnsuccessfulMsg().getText(),"Login was unsuccessful. Please correct the errors and try again.\n" +
                 "No customer account found");
         System.out.println("Login was unsuccessful");
-        String red = Login.UnsuccessfulMsg().getCssValue("color");
-        System.out.println(red);
-        soft.assertEquals(red,"rgba(228, 67, 75, 1)");
 
-        soft.assertAll();
 
     }
 
 
-
+    @And("Message should be red")
+    public void messageShouldBeRed() {
+        SoftAssert soft = new SoftAssert();
+        String redMsg = Login.getUnsuccessfulMsg().getCssValue("color");
+        soft.assertEquals(redMsg,"rgba(228, 67, 75, 1)");
+        soft.assertAll();
+    }
 }

@@ -24,10 +24,10 @@ WebElement currency;
     @FindBy(linkText = "Computers")
     WebElement HoverComputers;
 
-    @FindBy(linkText = "Desktops")
+    @FindBy(css = "body > div.master-wrapper-page > div.header-menu > ul.top-menu.notmobile > li:nth-child(1) > ul > li:nth-child(1) > a")
     WebElement subCategoryDesktops;
 
-    @FindBy(linkText = ".page-title")
+    @FindBy(className = "page-title")
     WebElement PageTitle;
 
     @FindBy(xpath = "//*[@id=\"nivo-slider\"]/a[1]")
@@ -68,64 +68,78 @@ WebElement currency;
 
     @FindBy(css = ".qty-input")
     WebElement qty;
-    public WebElement Currency()
+
+    @FindBy(css = "body > div.master-wrapper-page > div.header-menu > ul.top-menu.notmobile > li:nth-child(1) > a")
+    WebElement computersCategory;
+
+    @FindBy(css = "body > div.master-wrapper-page > div.master-wrapper-content > div > div.center-2 > div > div.page-body > div.category-grid.sub-category-grid > div > div:nth-child(1) > div > h2 > a")
+    WebElement desktopsTitle;
+    public WebElement getComputersCategory() {
+        return computersCategory;
+    }
+
+    public WebElement getDesktopsTitle() {
+        return desktopsTitle;
+    }
+
+    public WebElement getCurrency()
   {
 
       return currency;
   }
 
-  public WebElement Euro()
+  public WebElement getEuro()
   {
       return Euro;
   }
 
 
-      public List<WebElement> ProductElement()
+      public List<WebElement> getProductElements()
       {
           return Hooks.driver.findElements(By.cssSelector(".price.actual-price"));
 
 
       }
 
-      public WebElement SearchBar()
+      public WebElement getSearchBar()
       {
           return searchBar;
       }
 
-      public WebElement SearchButton()
+      public WebElement getSearchButton()
       {
 
           return searchBtn;
       }
-    public WebElement Hovering()
+    public WebElement getHovering()
     {
         return HoverComputers;
 
     }
-    public WebElement SubCategory()
+    public WebElement getSubCategory()
     {
 
         return subCategoryDesktops;
     }
-    public WebElement PageTitle()
+    public WebElement getPageTitle()
     {
         return PageTitle;
     }
 
-    public WebElement firstSlide ()
+    public WebElement getfirstSlide ()
     {
 
         return firstSlide;
 
     }
 
-      public List<WebElement>SearchProductElements()
+      public List<WebElement>getSearchProductElements()
       {
 
           return Hooks.driver.findElements(By.cssSelector(".product-item"));
       }
 
-      public WebElement ClickOnProduct()
+      public WebElement getClickOnProduct()
       {
 
           return product;
@@ -134,61 +148,61 @@ WebElement currency;
 
 
 
-      public WebElement productSku()
+      public WebElement getProductSku()
       {
 
           return sku;
       }
 
 
-      public WebElement secondSlide()
+      public WebElement getSecondSlide()
       {
           return secondSlide;
       }
 
-      public WebElement Facebook()
+      public WebElement getFacebookLink()
       {
 
           return facebook;
       }
 
-    public WebElement Rss()
+    public WebElement getRssLink()
     {
         return rss;
 
     }
 
-    public WebElement youtubeIcon()
+    public WebElement getYoutubeUrl()
     {
         return youtube;
     }
 
-    public WebElement WishlistButton()
+    public WebElement getWishlistButton()
     {
         return WishlistButton;
     }
 
-    public WebElement SuccessMsgGreen()
+    public WebElement getSuccessMsgGreen()
     {
         return successMsg;
     }
-    public WebElement xbutton()
+    public WebElement getXButton()
     {
         return xbutton;
     }
-    public WebElement WishListElement()
+    public WebElement getWishListElement()
     {
         return WishListElement;
     }
 
-    public WebElement QtyValue ()
+    public WebElement getQtyValue ()
     {
         return qty;
     }
 
 
 
-      public WebElement Twittericon()
+      public WebElement getTwitterLink()
       {
           return twitter;
       }

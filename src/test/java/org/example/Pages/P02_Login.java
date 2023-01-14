@@ -27,31 +27,31 @@ public class P02_Login extends pageBase {
     @FindBy(xpath = "/html/body/div[6]/div[1]/div[1]/div[2]/div[1]/ul/li[1]/a")
     WebElement unSuccessfulMsg;
 
-    public WebElement loginLink () {
+    public WebElement getloginLink () {
         return loginIcon;
     }
 
-    public WebElement email()
+    public WebElement getEmail()
     {
         return email;
 
     }
 
-    public WebElement Password()
+    public WebElement getPassword()
     {
         return password;
     }
-    public WebElement loginButton()
+    public WebElement getLoginButton()
     {
         return loginBtn;
     }
 
-    public WebElement myAccount()
+    public WebElement getMyAccount()
     {
       return myAcc;
     }
 
-    public WebElement UnsuccessfulMsg()
+    public WebElement getUnsuccessfulMsg()
     {
         return unSuccessfulMsg;
     }

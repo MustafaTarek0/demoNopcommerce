@@ -15,7 +15,7 @@ public class D06_homeSliderStepDef extends pageBase {
     public void NokiaLumia1020()
     {
 
-        home.firstSlide().click();
+        home.getfirstSlide().click();
 
 
 
@@ -35,7 +35,7 @@ public class D06_homeSliderStepDef extends pageBase {
     public void iPhoneSlider()
     {
 
-        home.secondSlide().click();
+        home.getSecondSlide().click();
 
 
     }

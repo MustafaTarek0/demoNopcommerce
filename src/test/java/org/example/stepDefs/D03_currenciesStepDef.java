@@ -19,14 +19,14 @@ public class D03_currenciesStepDef extends pageBase {
    @When("user Click on currencies dropdown list")
    public void userClickToDropListCurrencyChanger()
    {
-      Currencies.Currency().click();
+      Currencies.getCurrency().click();
 
    }
 
    @And("Click on Euro currency")
    public void euro()
    {
-      Currencies.Euro().click();
+      Currencies.getEuro().click();
 
    }
 
@@ -36,7 +36,7 @@ public class D03_currenciesStepDef extends pageBase {
    @And("Currencies should be changed to Euro")
    public void ShowProductElements()
    {
-      List<WebElement> currency = Currencies.ProductElement();
+      List<WebElement> currency = Currencies.getProductElements();
       for (WebElement element : currency)
       {
          System.out.println("price:" + element.getText());

@@ -40,14 +40,13 @@ public class P01_Register extends pageBase {
     @FindBy(css = "#ConfirmPassword")
     WebElement confirmPassword;
 
-
     @FindBy(css = "#register-button")
     WebElement registerButton;
 
     @FindBy(className = "result")
     WebElement message;
 
-    public WebElement maleGenderRadioButton()
+    public WebElement getMaleGenderRadioButton()
    {
 
 
@@ -55,7 +54,7 @@ public class P01_Register extends pageBase {
 
 
    }
-    public WebElement femaleGenderRadioButton()
+    public WebElement getFemaleGenderRadioButton()
     {
 
 
@@ -64,31 +63,31 @@ public class P01_Register extends pageBase {
 
     }
 
-   public WebElement FirstName()
+   public WebElement getFirstName()
    {
 
        return firstName;
    }
 
-   public WebElement LastName()
+   public WebElement getLastName()
    {
 
        return lastName;
 
    }
-   public WebElement DateOfBirthDay()
+   public WebElement getDateOfBirthDay()
    {
        return birthDay;
 
 
    }
-    public WebElement DateOfBirthMonth()
+    public WebElement getDateOfBirthMonth()
     {
         return birthMonth;
 
 
     }
-    public WebElement DateOfBirthYear()
+    public WebElement getDateOfBirthYear()
     {
         return birthYear;
 
@@ -96,33 +95,33 @@ public class P01_Register extends pageBase {
     }
 
 
-   public WebElement Email()
+   public WebElement getEmail()
    {
 
        return email;
 
    }
 
-   public WebElement Password()
+   public WebElement getPassword()
    {
 
        return password;
 
    }
 
-   public WebElement ConfirmPassword()
+   public WebElement getConfirmPassword()
    {
 
        return confirmPassword;
    }
 
-   public WebElement RegisterButton()
+   public WebElement getRegisterButton()
    {
        return registerButton;
 
    }
 
-   public WebElement ConfirmationMsg()
+   public WebElement getConfirmationMsg()
    {
 
        return message;
