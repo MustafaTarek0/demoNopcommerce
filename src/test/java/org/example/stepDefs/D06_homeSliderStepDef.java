@@ -3,10 +3,9 @@ package org.example.stepDefs;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.Pages.P03_homepage;
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.example.Pages.pageBase;
-import java.util.concurrent.TimeUnit;
+
 
 public class D06_homeSliderStepDef extends pageBase {
 

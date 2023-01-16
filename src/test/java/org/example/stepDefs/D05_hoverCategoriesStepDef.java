@@ -1,36 +1,34 @@
 package org.example.stepDefs;
 
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.example.Pages.P03_homepage;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.example.Pages.pageBase;
-
 import java.util.concurrent.TimeUnit;
 
 public class D05_hoverCategoriesStepDef  extends pageBase {
 
-    P03_homepage hover = new P03_homepage();
-    @When("user hover on Computers category")
+    P03_homepage hovering = new P03_homepage();
+    @When("user can hover on Computers tab")
     public void UserHoverOnCategory()
     {
-        Actions action = new Actions(Hooks.driver);
-        action.moveToElement(hover.getHovering()).perform();
+        Actions Act = new Actions(Hooks.driver);
+        Act.moveToElement(hovering.getHovering()).perform();
     }
 
-    @And("user click on sub-category {string}")
+    @And("user click on sub-tab {string}")
     public void desktops(String Category)
     {
 if (Category.equals("Desktops"))
 {
     Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-    hover.getSubCategory().click();
+    hovering.getSubCategory().click();
 }
 else {
-    hover.getComputersCategory().click();
+    hovering.getComputersCategory().click();
 
 }
 
@@ -42,13 +40,13 @@ else {
     public void ResultPageTitle(String Category)  {
 if (Category.equals("Desktops")) {
     Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-    String subCategory = hover.getPageTitle().getText().toLowerCase().trim();
+    String subCategory = hovering.getPageTitle().getText().toLowerCase().trim();
     Assert.assertEquals(subCategory, "desktops");
 }
 else {
-    System.out.println(hover.getDesktopsTitle().getText());
+    System.out.println(hovering.getDesktopsTitle().getText());
     Hooks.driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
-    Assert.assertEquals(hover.getDesktopsTitle().getText().toLowerCase().trim(), "desktops");
+    Assert.assertEquals(hovering.getDesktopsTitle().getText().toLowerCase().trim(), "desktops");
 }
     }
 
